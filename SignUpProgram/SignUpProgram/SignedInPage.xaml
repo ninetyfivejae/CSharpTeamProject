@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="SignUpProgram.SignedInPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SignUpProgram"
+             mc:Ignorable="d" 
+             d:DesignHeight="900" d:DesignWidth="1500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="startPageTitle" Grid.Row="0" Grid.Column="1" Content="En#" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <WrapPanel Grid.Row="1">
+            <Button x:Name="updateProfile" Width="400" Height="400" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="30" Background="White">
+            </Button>
+            <Button x:Name="signOut" Width="400" Height="400" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="30" Background="White"/>
+            <Button x:Name="deleteAccount" Width="400" Height="400" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="30" Background="White"/>
+        </WrapPanel>
+
+        <WrapPanel Grid.Row="2">
+            <Label Content="Update Profile" FontSize="30" HorizontalContentAlignment="Center" Width="400" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30"/>
+            <Label Content="Sign Out" FontSize="30" HorizontalContentAlignment="Center" Width="400" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30"/>
+            <Label Content="Delete Account" FontSize="30" HorizontalContentAlignment="Center" Width="400" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30"/>
+        </WrapPanel>
+
+    </Grid>
+</UserControl>

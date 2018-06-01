@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="SignUpProgram.AdditionalWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SignUpProgram"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="1000">
+    <Grid x:Name="additionalGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <WrapPanel Grid.Row="0" Grid.Column="1">
+            <TextBox x:Name="searchAddress"  FontSize="15" Width="250" Height="30" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10"
+                     PreviewKeyDown="searchAddress_PreviewKeyDown"/>
+            <Button x:Name="searchButton" Content="검색" FontSize="15" Width="70" Height="30" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10"
+                    PreviewMouseLeftButtonDown="searchButton_PreviewMouseLeftButtonDown" IsEnabled="False"/>
+            <Label Content="시도 + 시군구 + 읍/면 + 도로명 + 건물번호" FontSize="15" Width="400" Height="30"/>
+        </WrapPanel>
+
+        <ScrollViewer x:Name="addressScrollViewer" Grid.Row="1" Grid.Column="1" CanContentScroll="True" VerticalScrollBarVisibility="Visible">
+            <StackPanel x:Name="addressStackPanel">
+                
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</UserControl>
