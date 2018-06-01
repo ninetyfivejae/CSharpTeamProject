@@ -13,7 +13,7 @@ namespace SignUpProgram
         private static Database database;
         MemberVO Member = new MemberVO();
 
-        string databaseConnect = "Server=localhost;Database=signup;Uid=root;Pwd=6782";      //데이터베이스 연결
+        string databaseConnect = "Server=localhost;Database=signup;Uid=root;Pwd=6782";      //데이터베이스 연결, 비밀번호 확인할 것
         MySqlConnection connect;
         MySqlCommand command;
         MySqlDataReader reader;
