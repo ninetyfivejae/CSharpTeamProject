@@ -25,6 +25,7 @@ namespace SignUpProgram
         {
             InitializeComponent();
 
+            /*
             BitmapImage updateButton = new BitmapImage(new Uri(Environment.CurrentDirectory + @"/Image/img1.jpg"));
             Image updateImage = new Image();
             updateImage.Source = updateButton;
@@ -39,6 +40,7 @@ namespace SignUpProgram
             Image deleteAccountImage = new Image();
             deleteAccountImage.Source = deleteAccountButton;
             deleteAccount.Content = deleteAccountImage;
+            */
         }
 
 
