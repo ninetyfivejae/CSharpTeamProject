@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="Etc\Database.cs" />
     <Compile Include="Etc\Exceptions.cs" />
+    <Compile Include="Etc\IDatabase.cs" />
     <Compile Include="FindUsernamePassword.xaml.cs">
       <DependentUpon>FindUsernamePassword.xaml</DependentUpon>
     </Compile>
