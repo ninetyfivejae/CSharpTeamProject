@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace SignUpProgram
 {
@@ -27,7 +28,7 @@ namespace SignUpProgram
         }
 
         //입력받은 Data가 데이터베이스에 있는 데이터와 일치하는지 확인하는 메소드
-        public bool isDuplicated(string table, string attribute, string Data)
+        public bool isDuplicated(string table, string attribute, string Data) 
         {
             string sql = "select " + attribute + " from " + table + ";";
 
@@ -39,5 +40,12 @@ namespace SignUpProgram
             return false;
         }
 
+        public bool CheckCorrectAddress(string input)
+        {
+            if (Regex.IsMatch(input, @"^([가-힣]*[-]?\d?\s*)*([0-9]+[-]?[0-9]*)$"))
+                return true;
+            else
+                return false;
+        }
     }
 }

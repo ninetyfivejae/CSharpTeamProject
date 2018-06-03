@@ -398,37 +398,45 @@ namespace SignUpProgram
 
             string ServiceUrl = "http://www.juso.go.kr/addrlink/addrLinkApi.do?currentPage=" + currentPage + "&countPerPage=" + countPerPage + "&keyword=" + keyword + "&confmKey=" + confmKey;
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(ServiceUrl);
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            Stream stream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(stream, Encoding.UTF8);
-            string text = reader.ReadToEnd();
-
-            XmlDocument xml = new XmlDocument();
-            xml.LoadXml(text);
-
-            XmlNodeList nodeList = xml.GetElementsByTagName("juso");
-
-            additionalWindow.addressStackPanel.Children.Clear();
-
-            foreach (XmlNode el in nodeList)
+            try
             {
-                XmlNode roadAddressNode = el.SelectSingleNode("roadAddr");
-                XmlNode jibunAddressNode = el.SelectSingleNode("jibunAddr");
-                XmlNode zipNumber = el.SelectSingleNode("zipNo");
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(ServiceUrl);
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream stream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(stream, Encoding.UTF8);
+                string text = reader.ReadToEnd();
 
-                Button addressButton = new Button();
-                addressButton.Content = roadAddressNode.InnerText.ToString() + "\n" + jibunAddressNode.InnerText.ToString() + "\n" + zipNumber.InnerText.ToString();
-                addressButton.FontSize = 10;
-                addressButton.Background = Brushes.White;
-                addressButton.Width = 500;
-                addressButton.Height = 50;
-                addressButton.VerticalAlignment = VerticalAlignment.Top;
-                addressButton.HorizontalAlignment = HorizontalAlignment.Left;
-                addressButton.VerticalContentAlignment = VerticalAlignment.Top;
-                addressButton.HorizontalContentAlignment = HorizontalAlignment.Left;
-                additionalWindow.addressStackPanel.Children.Add(addressButton);
-                addressButton.Click += AddressButton_Click;
+                XmlDocument xml = new XmlDocument();
+                xml.LoadXml(text);
+
+                XmlNodeList nodeList = xml.GetElementsByTagName("juso");
+
+                additionalWindow.addressStackPanel.Children.Clear();
+
+                foreach (XmlNode el in nodeList)
+                {
+                    XmlNode roadAddressNode = el.SelectSingleNode("roadAddr");
+                    XmlNode jibunAddressNode = el.SelectSingleNode("jibunAddr");
+                    XmlNode zipNumber = el.SelectSingleNode("zipNo");
+
+                    Button addressButton = new Button();
+                    addressButton.Content = roadAddressNode.InnerText.ToString() + "\n" + jibunAddressNode.InnerText.ToString() + "\n" + zipNumber.InnerText.ToString();
+                    addressButton.FontSize = 10;
+                    addressButton.Background = Brushes.White;
+                    addressButton.Width = 500;
+                    addressButton.Height = 50;
+                    addressButton.VerticalAlignment = VerticalAlignment.Top;
+                    addressButton.HorizontalAlignment = HorizontalAlignment.Left;
+                    addressButton.VerticalContentAlignment = VerticalAlignment.Top;
+                    addressButton.HorizontalContentAlignment = HorizontalAlignment.Left;
+                    additionalWindow.addressStackPanel.Children.Add(addressButton);
+                    addressButton.Click += AddressButton_Click;
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("주소 입력을 다시 해주세요.");
+                Console.WriteLine(exception.GetType());
             }
         }
         //주소검색버튼 클릭
