@@ -351,6 +351,10 @@ namespace SignUpProgram
             int previousPage = 2;
             int currentPage = 0;
 
+            //인덱서 기능 구현, 로그아웃 시 안녕히가세요 창 띄움
+            CurrentUser = database.GetMemberInfo("member", "username", updatePage.usernameTextbox.Text);
+            MessageBox.Show(database[CurrentUser].ToString() + "님 안녕히가세요!");
+
             DoubleAnimation doubleAnimation = new DoubleAnimation();
             doubleAnimation.From = 0.0;
             doubleAnimation.To = this.Width;

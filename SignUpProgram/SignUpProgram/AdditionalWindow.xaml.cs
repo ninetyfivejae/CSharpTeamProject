@@ -47,7 +47,5 @@ namespace SignUpProgram
             else
                 searchButton.IsEnabled = false;
         }
-
-
     }
 }

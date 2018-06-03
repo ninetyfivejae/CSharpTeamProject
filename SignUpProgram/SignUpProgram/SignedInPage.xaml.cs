@@ -40,7 +40,5 @@ namespace SignUpProgram
             deleteAccountImage.Source = deleteAccountButton;
             deleteAccount.Content = deleteAccountImage;
         }
-
-
     }
 }
