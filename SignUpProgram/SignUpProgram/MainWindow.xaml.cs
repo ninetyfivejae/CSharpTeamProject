@@ -27,7 +27,8 @@ namespace SignUpProgram
         SignedInPage signedInPage = new SignedInPage();
         SignUpPage updatePage = new SignUpPage();
         Window window = new Window();
-        FindUsernamePassword findUsernamePassword = new FindUsernamePassword();
+        FindUsername findUsername = new FindUsername();
+        FindPassword findPassword = new FindPassword();
 
         Exceptions exceptions;
         Database database;
@@ -206,12 +207,12 @@ namespace SignUpProgram
         private void ForgotPassword_Click(object sender, RoutedEventArgs e)
         {
             window = new Window();
-            findUsernamePassword = new FindUsernamePassword();
+            findPassword = new FindPassword();
 
-            window.Content = findUsernamePassword;
+            window.Content = findPassword;
 
-            findUsernamePassword.inputLabel.Content = "Username";
-            findUsernamePassword.forgotButton.Click += ForgotButton_Click1;
+            //findUsername.inputLabel.Content = "Username";
+            findUsername.forgotButton.Click += ForgotButton_Click1;
 
             window.Topmost = true;
             window.Show();
@@ -219,25 +220,25 @@ namespace SignUpProgram
         //비밀번호를 찾기위해 아이디 입력하면 중복되는 값이 있는지 확인
         private void ForgotButton_Click1(object sender, RoutedEventArgs e)
         {
-            if (exceptions.isDuplicated("member", "username", findUsernamePassword.inputText.Text))
+            if (exceptions.isDuplicated("member", "username", findUsername.inputText.Text))
             {
-                findUsernamePassword.outputLabel.Content = database.GetMemberInfo("member", "username", findUsernamePassword.inputText.Text).MemberPASSWORD;
+                findUsername.outputLabel.Content = database.GetMemberInfo("member", "username", findUsername.inputText.Text).MemberPASSWORD;
             }
             else
             {
-                findUsernamePassword.outputLabel.Content = "Data don't exists";
+                findUsername.outputLabel.Content = "Data don't exists";
             }
         }
         //아이디를 찾기위해 전화번호 입력
         private void ForgotUsername_Click(object sender, RoutedEventArgs e)
         {
             window = new Window();
-            findUsernamePassword = new FindUsernamePassword();
+            findUsername = new FindUsername();
 
-            window.Content = findUsernamePassword;
+            window.Content = findUsername;
 
-            findUsernamePassword.inputLabel.Content = "Phone Number";
-            findUsernamePassword.forgotButton.Click += ForgotButton_Click;
+            findUsername.inputLabel.Content = "Phone Number";
+            findUsername.forgotButton.Click += ForgotButton_Click;
 
             window.Topmost = true;
             window.Show();
@@ -245,13 +246,13 @@ namespace SignUpProgram
         //아이디를 찾기위해 전화번호 입력해서 중복되는 값이 있는지 확인
         private void ForgotButton_Click(object sender, RoutedEventArgs e)
         {
-            if(exceptions.isDuplicated("member", "phonenumber", findUsernamePassword.inputText.Text))
+            if(exceptions.isDuplicated("member", "phonenumber", findUsername.inputText.Text))
             {
-                findUsernamePassword.outputLabel.Content = database.GetMemberInfo("member", "phonenumber", findUsernamePassword.inputText.Text).MemberUSERNAME;
+                findUsername.outputLabel.Content = database.GetMemberInfo("member", "phonenumber", findUsername.inputText.Text).MemberUSERNAME;
             }
             else
             {
-                findUsernamePassword.outputLabel.Content = "Data don't exists";
+                findUsername.outputLabel.Content = "Data don't exists";
             }
         }
         //화면전환 시간, 기간

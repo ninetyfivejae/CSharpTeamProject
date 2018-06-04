@@ -67,8 +67,11 @@
     <Compile Include="Etc\Database.cs" />
     <Compile Include="Etc\Exceptions.cs" />
     <Compile Include="Etc\IDatabase.cs" />
-    <Compile Include="FindUsernamePassword.xaml.cs">
-      <DependentUpon>FindUsernamePassword.xaml</DependentUpon>
+    <Compile Include="FindPassword.xaml.cs">
+      <DependentUpon>FindPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FindUsername.xaml.cs">
+      <DependentUpon>FindUsername.xaml</DependentUpon>
     </Compile>
     <Compile Include="Etc\MemberVO.cs" />
     <Compile Include="Etc\MailService.cs" />
@@ -89,7 +92,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FindUsernamePassword.xaml">
+    <Page Include="FindPassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindUsername.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

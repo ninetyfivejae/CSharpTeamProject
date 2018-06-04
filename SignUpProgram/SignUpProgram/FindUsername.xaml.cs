@@ -18,10 +18,10 @@ namespace SignUpProgram
     /// <summary>
     /// Interaction logic for FindUsernamePassword.xaml
     /// </summary>
-    public partial class FindUsernamePassword : UserControl
+    public partial class FindUsername : UserControl
     {
         //아이디와 비밀번호를 찾기위해 띄우는 팝업 윈도우 유저컨트롤
-        public FindUsernamePassword()
+        public FindUsername()
         {
             InitializeComponent();
         }
