@@ -18,7 +18,7 @@ using System.Windows.Media.Animation;
 namespace SignUpProgram
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainWindowㄴ.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -63,6 +63,7 @@ namespace SignUpProgram
             canvas.Children.Add(signedInPage);
             canvas.Children.Add(updatePage);
 
+            //버튼 클릭 시 델리게이트로 이벤트 설정
             startPage.signInButton.Click += SignInButton_Click;
             startPage.signUpHyperlink.Click += SignUpButton_Click;
             startPage.forgotUsername.Click += ForgotUsername_Click;
@@ -71,9 +72,10 @@ namespace SignUpProgram
             signUpPage.cancel.Click += SignUpPageCancel_Click;
             signUpPage.createAccount.Click += SignUpPageCancel_Click;
 
-            signedInPage.signOut.Click += SignedInPageCancel_Click;
-            signedInPage.deleteAccount.Click += DeleteAccount_Click;
-            signedInPage.updateProfile.Click += UpdateProfile_Click;
+            //직접 구현한 CustomButton 이벤트 설정
+            signedInPage.signOut.MouseDoubleClick += SignedInPageCancel_Click;
+            signedInPage.deleteAccount.MouseDoubleClick += DeleteAccount_Click;
+            signedInPage.updateProfile.MouseDoubleClick += UpdateProfile_Click;
 
             updatePage.updateAccount.Click += UpdateMemberData_Click;
             updatePage.cancel.Click += Cancel_Click;
@@ -373,7 +375,5 @@ namespace SignUpProgram
             canvas.Children[previousPage].BeginAnimation(Canvas.LeftProperty, doubleAnimation);
             canvas.Children[currentPage].BeginAnimation(Canvas.LeftProperty, doubleAnimationTwo);
         }
-
-
     }
 }

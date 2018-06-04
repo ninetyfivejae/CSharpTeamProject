@@ -61,6 +61,9 @@
     <Compile Include="AdditionalWindow.xaml.cs">
       <DependentUpon>AdditionalWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Etc\CustomButton.xaml.cs">
+      <DependentUpon>CustomButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Etc\Database.cs" />
     <Compile Include="Etc\Exceptions.cs" />
     <Compile Include="Etc\IDatabase.cs" />
@@ -68,6 +71,7 @@
       <DependentUpon>FindUsernamePassword.xaml</DependentUpon>
     </Compile>
     <Compile Include="Etc\MemberVO.cs" />
+    <Compile Include="Etc\MailService.cs" />
     <Compile Include="SignedInPage.xaml.cs">
       <DependentUpon>SignedInPage.xaml</DependentUpon>
     </Compile>
@@ -80,6 +84,10 @@
     <Page Include="AdditionalWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Etc\CustomButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FindUsernamePassword.xaml">
       <SubType>Designer</SubType>
