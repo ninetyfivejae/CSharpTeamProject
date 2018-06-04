@@ -32,23 +32,5 @@ namespace SignUpProgram
 
             this.Style = style;
         }
-
-        //public event RoutedEventHandler Click
-        //{
-        //    add { AddHandler(ClickEvent, value); }
-        //    remove { RemoveHandler(ClickEvent, value); }
-        //}
-
-        //protected virtual void OnClick()
-        //{
-        //    RoutedEventArgs args = new RoutedEventArgs(ClickEvent, this);
-        //    RaiseEvent(args);
-        //}
-
-        //protected override void OnMouseLeftButtonUp(MouseButtonEventArgs e)
-        //{
-        //    base.OnMouseLeftButtonUp(e);
-        //    OnClick();
-        //}
     }
 }

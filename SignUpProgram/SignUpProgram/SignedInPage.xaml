@@ -13,7 +13,7 @@
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
 
-        <Label x:Name="startPageTitle" Grid.Row="0" Grid.Column="1" Content="En#" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Label x:Name="startPageTitle" Grid.Row="0" Grid.Column="1" Content="Sejong University C#" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
         <WrapPanel Grid.Row="1">
             <local:CustomButton x:Name="updateProfile" Width="400" Height="400" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="30" Background="White"/>
