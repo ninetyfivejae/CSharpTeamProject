@@ -11,9 +11,9 @@ namespace SignUpProgram
     {
         string SMTP_SERVER = "smtp.naver.com";
         int SMTP_PORT = 587;
-        string senderID = "fewus28@naver.com";
-        string senderName = "fewus28";
-        string senderPassword = "3dlatjrzh)!";
+        string senderID = "메일주소";
+        string senderName = "아이디";
+        string senderPassword = "비밀번호";
         Database database;
         Exceptions exception;
 
